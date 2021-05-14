@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.player
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height:auto;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.player video{
+    background-color: #3c3c3d;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.fullScreen{
+    width: 100vw;
+    height: 100vh;
+}
+video::-webkit-media-controls {
+    display:none !important;
   }
+
+.controlBar{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    z-index: 3;
+    margin: 0 2vw;
+    margin-top:-10vh;
+    opacity:1;
+    transition: opacity 0.3s linear;
+    background-color: rgba(0,0,0,0.5 );
+
+}
+.controlBarFade{
+
+    opacity: 0;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.controlButtons
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 5;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.details{
+    z-index: 2;
+    position: absolute;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    display: inline-block;
+    background-color: rgba(0,0,0,0.2 );
+    color:white;
+    font-family: 'Bebas Neue', cursive;
+   
+    
+   
+}
+.details div{
+    margin-left: 1.5vw;
+    letter-spacing: 6px;
+    box-sizing: border-box;
+}
+.details p{
+    padding-right: 50%;
+    letter-spacing: 0px;
+}
+@media screen and (max-width:1000px) {
+    .player{
+        width: 100vw;
+    }
+    .player video{
+        height: 100vh;
+        width: 100vw;
+    }
+}
+@media screen and(orientation-landscape) {
+    .player video{
+        height: 100vh;
+        width: 100vw;
+    }
+    
 }

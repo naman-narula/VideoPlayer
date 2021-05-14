@@ -1,25 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Player from "./components/player";
+import Control from "./components/control";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+import { useState,useRef} from 'react';
+
+export default function App() {
+
+  const player=useRef(null);//reference of Player Component
+  const [play,setPlay]=useState(false);
+
+  return <div className="player">
+    <Player vidRef={player}/>
+    <Control  setPlay={setPlay} play={play} playerRef={player}/>{/*buttons,sideEffects*/}
+</div>
+    
 }
 
-export default App;
+
