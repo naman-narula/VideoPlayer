@@ -135,7 +135,7 @@ function seek(e)
 
    
     const useStyles=useCallback (makeStyles({
-        control:{
+        root:{
             width:width,
             backgroundColor:'rgba(0,0,0,0.5)',
             height:"2vh"
@@ -152,7 +152,7 @@ function seek(e)
     return<div className="controlBar" ref={controlRef}>
     {!play&&<Details playerRef={playerRef}></Details>}
     <Buttons setPlay={setPlay} play={play} playerRef={playerRef}/>
-    <LinearProgress variant="determinate" value={progress%100} classes={{root:classes.control,barColorPrimary:classes.primary }} onClick={seek}></LinearProgress>{/*progress value was sometimes overflowing 100 so added mod operator */}
+    <LinearProgress variant="determinate" value={progress%100} classes={{root:classes.root,barColorPrimary:classes.primary }} onClick={seek}></LinearProgress>{/*progress value was sometimes overflowing 100 so added mod operator */}
    
     </div>
 
